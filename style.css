@@ -1,0 +1,17 @@
+.navi > li {
+  display: inline;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px;
+  color: white;
+  float: right;
+}
+
+.navi,
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: gray;
+}
