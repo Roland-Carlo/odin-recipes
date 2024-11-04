@@ -1,0 +1,149 @@
+$bg-color: #ebe9dc;
+$mn-color: #23201a;
+$sub-color: #9f5b4c;
+// $dv-width: 80vw;
+$dv-height: 80vh;
+$main-font: "SS-Pro";
+$sub-font: "Helvetica-Bold";
+
+@font-face {
+  font-family: "SS-Pro";
+  src: url(fonts/SourceSansPro-Regular.otf) format("opentype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url(fonts/SourceSansPro-Semibold.otf) format("opentype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+body {
+  margin: 30px;
+  background: #fff;
+  font-family: $main-font;
+  color: $mn-color;
+}
+
+.wrapper {
+  background: $bg-color;
+  height: $dv-height;
+  // width: $dv-width;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(4, auto);
+  // grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+}
+
+header {
+  grid-area: 1 / 1 / 2 / 2;
+  font-family: $sub-font;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  margin: 10px;
+}
+
+header div:nth-child(2) {
+  font-size: 1.5rem;
+}
+
+nav {
+  grid-area: 1 / 3 / 1 / 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 10px;
+}
+
+main {
+  grid-area: 2 / 1 / 3 / 4;
+  // font-family: $sub-font;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  margin: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+main > article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: yellow;
+}
+
+p {
+  padding: 20px;
+  margin: 0px;
+  font-family: $sub-font;
+}
+
+main > article:nth-child(1) {
+  grid-area: 1 / 1;
+}
+
+main > article:nth-child(2) {
+  grid-area: 1 / 3;
+}
+
+main > article:nth-child(3) {
+  grid-area: 1 / 5;
+}
+
+nav > ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li {
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+li > a:hover {
+  border-bottom: $mn-color solid 2px;
+  transition: 50ms;
+}
+
+a {
+  text-decoration: none;
+  color: $mn-color;
+}
+
+button {
+  margin: 10px;
+  background-color: $bg-color;
+  border: $mn-color solid 1px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-family: $main-font;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: $mn-color;
+  color: #fff;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  border: #fff 10px solid;
+  border-radius: 10px;
+  width: 75%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
