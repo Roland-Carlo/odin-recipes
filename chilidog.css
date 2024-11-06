@@ -19,9 +19,9 @@ body {
 
 .wrapper {
   background: #ebe9dc;
-  height: 80vh;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-auto-flow: row;
   grid-template-rows: repeat(4, auto);
   padding: 20px;
 }
@@ -47,39 +47,13 @@ nav {
 }
 
 main {
+  display: grid;
   grid-area: 2/1/3/4;
   font-size: 1.3rem;
   line-height: 2rem;
-  margin: 10px;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 10px;
-}
-
-main > article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-p {
-  padding: 20px;
-  margin: 0px;
-  font-family: "Helvetica-Bold";
-}
-
-main > article:nth-child(1) {
-  grid-area: 1/1;
-}
-
-main > article:nth-child(2) {
-  grid-area: 1/3;
-}
-
-main > article:nth-child(3) {
-  grid-area: 1/5;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, auto);
 }
 
 nav > ul {
@@ -92,7 +66,7 @@ li {
   margin-left: 20px;
   margin-right: 10px;
   font-size: 1.3rem;
-  text-align: center;
+  text-align: left;
 }
 
 li > a:hover {
@@ -123,13 +97,40 @@ button:hover {
   color: #fff;
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  border: #fff 10px solid;
-  border-radius: 10px;
-  width: 75%;
-  height: auto;
-  transition: 0.5s ease;
-  backface-visibility: hidden;
+img {
+  border: 10px #fff solid;
+}
+
+.image-container {
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+
+.caption {
+  grid-column: 1;
+  padding: 10px;
+  font-family: "Helvetica-Bold";
+}
+
+.menu-item > div:nth-child(3) {
+  grid-area: 1/2/2/3;
+  padding-left: 10px;
+}
+
+.cook-instruction {
+  grid-area: 1/4/2/4;
+}
+
+p {
+  margin: 0px;
+  padding: 10px;
+}
+
+ol {
+  text-align: justify;
+}
+
+li {
+  padding-bottom: 5px;
 }/*# sourceMappingURL=chilidog.css.map */
